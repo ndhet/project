@@ -1,4 +1,4 @@
-USER="dedi"
+USER="network"
 PASS="Dedi100"
 passwd $USER
 read "Enter new UNIX password: "
