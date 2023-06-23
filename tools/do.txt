@@ -1,0 +1,41 @@
+WINDOWS SERVER 2012
+
+wget -O- --no-check-certificate http://drive.muavps.net/windows/Windows2012r2.gz | gunzip | dd of=/dev/vda
+
+USER:administrator
+PASS:Datnguyentv.com
+_________________________________________
+WINDOWS SERVER 2016
+
+wget -O- --no-check-certificate http://drive.muavps.net/windows/Windows2016.gz | gunzip | dd of=/dev/vda
+
+user: administrator
+pass: Datnguyentv.com
+_________________________________________
+WINDOWS SERVER 2019
+
+wget -O- --no-check-certificate http://drive.muavps.net/windows/Windows2019.gz | gunzip | dd of=/dev/vda
+
+user: administrator
+pass: Datnguyentv.com
+_________________________________________
+WINDOWS SERVER 2022
+
+wget -O- --no-check-certificate http://drive.muavps.net/windows/Windows2022.gz | gunzip | dd of=/dev/vda
+
+user: administrator
+pass: Datnguyentv.com
+_________________________________________
+WINDOWS 10 LTSC
+
+wget -O- --no-check-certificate http://drive.muavps.net/windows/windows10.gz | gunzip | dd of=/dev/vda
+
+user: datnguyentv
+pass: Datnguyentv.com
+_________________________________________
+Windows 7 Ultimate:
+
+wget -O- --no-check-certificate http://drive.muavps.net/windows/Windows7sp1-active.gz | gunzip | dd of=/dev/vda
+
+user: datnguyentv
+pass: Datnguyentv.com
