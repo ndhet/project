@@ -9,3 +9,6 @@ sudo systemctl start xrdp
 sudo ufw status
 sudo ufw allow 3389/tcp
 sudo ufw reload
+clear
+apt install tasksel -y
+tasksel
