@@ -11,5 +11,5 @@ sudo ufw allow 3389/tcp
 sudo ufw reload
 clear
 apt install tasksel -y
-tasksel install ubuntu-desktop
+tasksel install cinnamon-desktop
 ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
