@@ -11,4 +11,5 @@ sudo ufw allow 3389/tcp
 sudo ufw reload
 clear
 apt install tasksel -y
-tasksel
+tasksel install gnome-desktop
+ln -fs /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
