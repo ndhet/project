@@ -13,11 +13,11 @@ echo "	6) Pakai link gz mu sendiri"
 read -p "Pilih [1]: " PILIHOS
 
 case "$PILIHOS" in
-	1|"") PILIHOS="link2019"  IFACE="Ethernet Instance 0 2";;
+	1|"") PILIHOS="128.199.230.9/w19.gz"  IFACE="Ethernet Instance 0 2";;
 	2) PILIHOS="link2016"  IFACE="Ethernet Instance 0 2";;
-	3) PILIHOS="link2012"  IFACE="Ethernet Instance 0";;
-	4) PILIHOS="link2010"  IFACE="Ethernet Instance 0 2";;
-	5) PILIHOS="link2022"  IFACE="Ethernet Instance 0 2";;
+	3) PILIHOS="128.199.230.9/w12.gz"  IFACE="Ethernet Instance 0";;
+	4) PILIHOS="128.199.230.9/w10.gz"  IFACE="Ethernet Instance 0 2";;
+	5) PILIHOS="128.199.230.9/w22.gz"  IFACE="Ethernet Instance 0 2";;
 	6) read -p "Masukkan Link GZ mu : " PILIHOS;;
 	*) echo "pilihan salah"; exit;;
 esac
