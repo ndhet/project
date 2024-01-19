@@ -6,18 +6,18 @@ echo "Pilih OS yang ingin anda install"
 echo "	1) Windows 2019(Default)"
 echo "	2) Windows 2016"
 echo "	3) Windows 2012"
-echo "	4) Windows 7"
+echo "	4) Windows 2010"
 echo "	5) Windows 2022"
 echo "	6) Pakai link gz mu sendiri"
 
 read -p "Pilih [1]: " PILIHOS
 
 case "$PILIHOS" in
-	1|"") PILIHOS="http://drive.muavps.net/windows/Windows2019.gz"  IFACE="Ethernet Instance 0 2";;
-	2) PILIHOS="http://drive.muavps.net/windows/Windows2016.gz"  IFACE="Ethernet Instance 0 2";;
-	3) PILIHOS="http://drive.muavps.net/windows/Windows2012r2.gz"  IFACE="Ethernet Instance 0";;
-	4) PILIHOS="http://drive.muavps.net/windows/Windows7sp1-active.gz"  IFACE="Ethernet Instance 0 2";;
-	5) PILIHOS="http://drive.muavps.net/windows/Windows2022.gz"  IFACE="Ethernet Instance 0 2";;
+	1|"") PILIHOS="link2019"  IFACE="Ethernet Instance 0 2";;
+	2) PILIHOS="link2016"  IFACE="Ethernet Instance 0 2";;
+	3) PILIHOS="link2012"  IFACE="Ethernet Instance 0";;
+	4) PILIHOS="link2010"  IFACE="Ethernet Instance 0 2";;
+	5) PILIHOS="link2022"  IFACE="Ethernet Instance 0 2";;
 	6) read -p "Masukkan Link GZ mu : " PILIHOS;;
 	*) echo "pilihan salah"; exit;;
 esac
