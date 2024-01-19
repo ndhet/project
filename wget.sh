@@ -15,7 +15,7 @@ read -p "Pilih [1]: " PILIHOS
 case "$PILIHOS" in
 	1|"") PILIHOS="http://drive.muavps.net/windows/Windows2019.gz"  IFACE="Ethernet Instance 0 2";;
 	2) PILIHOS="http://drive.muavps.net/windows/Windows2016.gz"  IFACE="Ethernet Instance 0 2";;
-	3) PILIHOS="http://drive.muavps.net/windows/Windows2012r2.gz"  IFACE="Ethernet";;
+	3) PILIHOS="http://drive.muavps.net/windows/Windows2012r2.gz"  IFACE="Ethernet Instance 0";;
 	4) PILIHOS="http://drive.muavps.net/windows/Windows7sp1-active.gz"  IFACE="Ethernet Instance 0 2";;
 	5) PILIHOS="http://drive.muavps.net/windows/Windows2022.gz"  IFACE="Ethernet Instance 0 2";;
 	6) read -p "Masukkan Link GZ mu : " PILIHOS;;
