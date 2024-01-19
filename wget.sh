@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# CREATED By NIXPOIN.COM
+# CREATED By SSHAXOR.MY.ID
 #
 echo "Pilih OS yang ingin anda install"
 echo "	1) Windows 2019(Default)"
@@ -22,7 +22,7 @@ case "$PILIHOS" in
 	*) echo "pilihan salah"; exit;;
 esac
 
-echo "Merasa terbantu dengan script ini? Anda bisa memberikan dukungan melalui QRIS kami https://nixpoin.com/qris"
+echo "Merasa terbantu dengan script ini? Anda bisa memberikan dukungan melalui QRIS kami https://sshaxor.my.id/qris"
 
 read -p "Masukkan password untuk akun Administrator (minimal 12 karakter): " PASSADMIN
 
