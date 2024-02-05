@@ -1,12 +1,13 @@
 <div style="display: none;">
-<a href="https://sshaxor.my.id">ssh, trojan, vpn, gratis, premium</a>
+<a href="https://sshaxor.my.id">ssh websocket</a>
+<a href="https://sshaxor.my.id/ssh">sshaxor ssh</a>
 <a href="https://sshaxor.my.id">ssh premium</a>
-<a href="https://sshaxor.my.id">vmess gratis</a>
-<a href="https://sshaxor.my.id">trojan premium</a>
-<a href="https://sshaxor.my.id">vless premium</a>
-<a href="https://sshaxor.my.id">SSH TUNNEL</a>
-<a href="https://sshaxor.my.id/ssh">UDP PREMIUM</a>
-<a href="https://sshaxor.my.id/ssh">UDP GRATIS</a>
+<a href="https://sshaxor.my.id">ssh sshaxor</a>
+<a href="https://sshaxor.my.id/vmess">sshaxor vmess</a>
+<a href="https://sshaxor.my.id">ssh ws</a>
+<a href="https://sshaxor.my.id">create ssh</a>
+<a href="https://sshaxor.my.id/ssh">server ssh</a>
+<a href="https://sshaxor.my.id/ssh">ssh server</a>
 <a href="https://sshaxor.com">ssh gratis</a>
 <a href="https://rest-api.sshaxor.com">Rest Api</a>
 </div>
