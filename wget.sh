@@ -13,11 +13,11 @@ echo "	6) Pakai link gz mu sendiri"
 read -p "Pilih [1]: " PILIHOS
 
 case "$PILIHOS" in
-	1|"") PILIHOS="https://privateaccess.my.id/w19.gz"  IFACE="Ethernet Instance 0";;
-	2) PILIHOS="http://drive.muavps.net/windows/Windows2016.gz"  IFACE="Ethernet Instance 0";;
-	3) PILIHOS="https://privateaccess.my.id/w12.gz"  IFACE="Ethernet Instance 0";;
-	4) PILIHOS="https://privateaccess.my.id/w10.gz"  IFACE="Ethernet Instance 0";;
-	5) PILIHOS="https://privateaccess.my.id/w22.gz"  IFACE="Ethernet Instance 0";;
+	1|"") PILIHOS="http://167.172.78.82/GPISERVER2019.gz"  IFACE="Ethernet Instance 0";;
+	2) PILIHOS="http://167.172.78.82/GPISERVER2016.gz"  IFACE="Ethernet Instance 0";;
+	3) PILIHOS="http://drive.muavps.net/windows/Windows2012r2.gz"  IFACE="Ethernet Instance 0";;
+	4) PILIHOS="http://167.172.78.82/GPISERVER10.gz"  IFACE="Ethernet Instance 0";;
+	5) PILIHOS="http://167.172.78.82/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
 	6) read -p "Masukkan Link GZ mu : " PILIHOS;;
 	*) echo "pilihan salah"; exit;;
 esac
@@ -41,7 +41,7 @@ exit /b 2)
 net user Administrator $PASSADMIN
 
 
-netsh -c interface ip set address name="$IFACE" source=static address=$IP4 mask=255.255.240.0 gateway=$GW
+netsh -c interface ip set address name="$IFACE" static address=$IP4 mask=255.255.240.0 gateway=$GW
 netsh -c interface ip add dnsservers name="$IFACE" address=1.1.1.1 index=1 validate=no
 netsh -c interface ip add dnsservers name="$IFACE" address=8.8.4.4 index=2 validate=no
 
