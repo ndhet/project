@@ -8,17 +8,19 @@ echo "	2) Windows 2016"
 echo "	3) Windows 2012"
 echo "	4) Windows 2010"
 echo "	5) Windows 2022"
-echo "	6) Pakai link gz mu sendiri"
+echo "	6) Windows 11"
+echo "	7) Pakai link gz mu sendiri"
 
 read -p "Pilih [1]: " PILIHOS
 
 case "$PILIHOS" in
 	1|"") PILIHOS="http://167.172.78.82/GPISERVER2019.gz"  IFACE="Ethernet Instance 0";;
 	2) PILIHOS="http://167.172.78.82/GPISERVER2016.gz"  IFACE="Ethernet Instance 0";;
-	3) PILIHOS="http://165.22.243.224/windows2012.gz"  IFACE="Ethernet Instance 0";;
+	3) PILIHOS="http://drive.muavps.net/windows/Windows2012r2.gz"  IFACE="Ethernet Instance 0";;
 	4) PILIHOS="http://167.172.78.82/GPISERVER10.gz"  IFACE="Ethernet Instance 0";;
 	5) PILIHOS="http://167.172.78.82/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
-	6) read -p "Masukkan Link GZ mu : " PILIHOS;;
+	6) PILIHOS="https://ia801504.us.archive.org/34/items/windows-11byronit/Windows11byronit.gz"  IFACE="Ethernet Instance 0";;
+	7) read -p "Masukkan Link GZ mu : " PILIHOS;;
 	*) echo "pilihan salah"; exit;;
 esac
 
