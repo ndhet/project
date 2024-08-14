@@ -7,7 +7,8 @@ display_menu() {
     echo "2. Windows Server 2019"
     echo "3. Windows Server 2022"
     echo "4. Windows Server 2012"
-    echo "5. Windows 11"
+    echo "5. Windows 10 Pro Ghost Spectre"
+    echo "6. Windows 11 Pro Ghost Spectre"
     read -p "Enter your choice: " choice
 }
 
@@ -52,10 +53,16 @@ case $choice in
         iso_file="windows2012.iso"
         ;;
     5)
-        # Windows Server 2022
-        img_file="windows2022.img"
-        iso_link="https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US"
-        iso_file="windows2022.iso"
+        # Windows 10
+        img_file="windows10.img"
+        iso_link="http://146.190.81.202/win11.iso"
+        iso_file="windows10.iso"
+        ;;
+    6)
+        # Windows 11
+        img_file="windows11.img"
+        iso_link="http://146.190.81.202/win11.iso"
+        iso_file="windows11.iso"
         ;;
     *)
         echo "Invalid choice. Exiting."
