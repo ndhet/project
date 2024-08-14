@@ -15,7 +15,7 @@ read -p "Pilih [1]: " PILIHOS
 case "$PILIHOS" in
 	1|"") PILIHOS="http://167.172.78.82/GPISERVER2019.gz"  IFACE="Ethernet Instance 0";;
 	2) PILIHOS="http://167.172.78.82/GPISERVER2016.gz"  IFACE="Ethernet Instance 0";;
-	3) PILIHOS="http://drive.muavps.net/windows/Windows2012r2.gz"  IFACE="Ethernet Instance 0";;
+	3) PILIHOS="http://165.22.243.224/windows2012.gz"  IFACE="Ethernet Instance 0";;
 	4) PILIHOS="http://167.172.78.82/GPISERVER10.gz"  IFACE="Ethernet Instance 0";;
 	5) PILIHOS="http://167.172.78.82/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
 	6) read -p "Masukkan Link GZ mu : " PILIHOS;;
