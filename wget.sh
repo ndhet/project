@@ -16,10 +16,10 @@ read -p "Pilih [1]: " PILIHOS
 case "$PILIHOS" in
 	1|"") PILIHOS="http://167.172.78.82/GPISERVER2019.gz"  IFACE="Ethernet Instance 0";;
 	2) PILIHOS="http://167.172.78.82/GPISERVER2016.gz"  IFACE="Ethernet Instance 0";;
-	3) PILIHOS="https://hadongpho.com/css/windows2012.gz"  IFACE="Ethernet Instance 0";;
-	4) PILIHOS="https://hadongpho.com/css/windows10.gz"  IFACE="Ethernet Instance 0";;
+	3) PILIHOS="https://hadongpho.com/css/gz/windows2012.gz"  IFACE="Ethernet Instance 0";;
+	4) PILIHOS="https://hadongpho.com/css/gz/windows10.gz"  IFACE="Ethernet Instance 0";;
 	5) PILIHOS="http://167.172.78.82/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
-	6) PILIHOS="https://hadongpho.com/css/windows11.gz"  IFACE="Ethernet Instance 0";;
+	6) PILIHOS="https://hadongpho.com/css/gz/windows11.gz"  IFACE="Ethernet Instance 0";;
 	7) read -p "Masukkan Link GZ mu : " PILIHOS;;
 	*) echo "pilihan salah"; exit;;
 esac
