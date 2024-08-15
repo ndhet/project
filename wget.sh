@@ -48,10 +48,11 @@ case "$PILIHOS" in
 	7) read -p "Masukkan Link GZ mu : " PILIHOS;;
 	*) echo "pilihan salah"; exit;;
 esac
+clear
+echo -e "Merasa terbantu dengan script ini? "
+echo -e "Anda bisa memberikan dukungan melalui QRIS kami https://sshaxor.my.id/qris"
 
-echo "Merasa terbantu dengan script ini? Anda bisa memberikan dukungan melalui QRIS kami https://sshaxor.my.id/qris"
-
-read -p "Masukkan password untuk akun Administrator (minimal 12 karakter): " PASSADMIN
+read -p "Masukkan password untuk akun Administrator " PASSADMIN
 
 IP4=$(curl -4 -s icanhazip.com)
 GW=$(ip route | awk '/default/ { print $3 }')
@@ -84,7 +85,6 @@ sudo ntfsfix /dev/vda1
 sudo mount -o rw /dev/vda1 /tmp/windows
 cd "/tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Startup"
 cp -f /tmp/net.bat net.bat
-sudo unmount /dev/vda1
 
 echo 'Your server will turning off in 3 second'
 sleep 3
