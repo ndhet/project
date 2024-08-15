@@ -83,7 +83,7 @@ wget --no-check-certificate -O- $PILIHOS | gunzip | dd of=/dev/vda bs=3M status=
 sudo mkdir /tmp/windows
 sudo ntfsfix /dev/vda1
 sudo mount -o rw /dev/vda1 /tmp/windows
-cd "/tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/"
+cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
 cp -f /tmp/net.bat net.bat
 clear
 
