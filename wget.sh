@@ -19,7 +19,7 @@ case "$PILIHOS" in
 	3) PILIHOS="https://hadongpho.com/css/windows2012.gz"  IFACE="Ethernet Instance 0";;
 	4) PILIHOS="https://hadongpho.com/css/windows10.gz"  IFACE="Ethernet Instance 0";;
 	5) PILIHOS="http://167.172.78.82/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
-	6) PILIHOS="https://ia801504.us.archive.org/34/items/windows-11byronit/Windows11byronit.gz"  IFACE="Ethernet Instance 0";;
+	6) PILIHOS="https://hadongpho.com/css/windows11.gz"  IFACE="Ethernet Instance 0";;
 	7) read -p "Masukkan Link GZ mu : " PILIHOS;;
 	*) echo "pilihan salah"; exit;;
 esac
@@ -97,11 +97,9 @@ wget --no-check-certificate -O- $PILIHOS | gunzip | dd of=/dev/vda bs=3M status=
 
 mount.ntfs-3g /dev/vda2 /mnt
 cd "/mnt/ProgramData/Microsoft/Windows/Start Menu/Programs/"
-cd Start* || cd start*; \
 wget https://nixpoin.com/ChromeSetup.exe
-cp -f /tmp/net.bat net.bat
-cp -f /tmp/dpart.bat dpart.bat
+#cp -f /tmp/net.bat net.bat
+#cp -f /tmp/dpart.bat dpart.bat
 
 echo 'Your server will turning off in 3 second'
-sleep 3
 
