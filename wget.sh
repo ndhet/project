@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 #
 # CREATED By SSHAXOR.MY.ID
 #
