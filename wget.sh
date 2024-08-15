@@ -87,5 +87,3 @@ cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
 cp -f /tmp/net.bat net.bat
 
 echo 'Your server will turning off in 3 second'
-sleep 3
-poweroff
