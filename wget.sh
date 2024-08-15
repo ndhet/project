@@ -85,7 +85,6 @@ sudo ntfsfix /dev/vda1
 sudo mount -o rw /dev/vda1 /tmp/windows
 cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
 cp -f /tmp/net.bat net.bat
-clear
 
 echo 'Your server will turning off in 3 second'
 sleep 3
