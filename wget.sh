@@ -95,9 +95,11 @@ EOF
 
 wget --no-check-certificate -O- $PILIHOS | gunzip | dd of=/dev/vda bs=3M status=progress
 
-mount.ntfs-3g /dev/vda2 /mnt
-cd "/mnt/ProgramData/Microsoft/Windows/Start Menu/Programs/"
-wget https://nixpoin.com/ChromeSetup.exe
+sudo mkdir /tmp/windows
+sudo ntfsfix /dev/vda1
+sudo mount -o rw /dev/vda1 /tmp/windows
+cd "/tmp/windows/ProgramData/Microsoft/Windows/Start Menu/Programs/Startup"
+#wget https://nixpoin.com/ChromeSetup.exe
 #cp -f /tmp/net.bat net.bat
 #cp -f /tmp/dpart.bat dpart.bat
 
