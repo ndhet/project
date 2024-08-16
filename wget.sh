@@ -42,24 +42,38 @@ case "$PILIHOS" in
 	1|"") PILIHOS="http://167.172.78.82/GPISERVER2019.gz"  IFACE="Ethernet Instance 0";;
 	2) PILIHOS="http://167.172.78.82/GPISERVER2016.gz"  IFACE="Ethernet Instance 0";;
 	3) PILIHOS="https://hadongpho.com/css/gz/windows2012.gz"  IFACE="Ethernet Instance 0";;
-	4) PILIHOS="http://167.172.78.82/GPISERVER2022.gz"  IFACE="Ethernet Instance 0 2";;
-	5) PILIHOS="https://hadongpho.com/css/gz/windows10.gz"  IFACE="Ethernet Instance 0";;
+	4) PILIHOS="http://167.172.78.82/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
+	5) PILIHOS="https://hadongpho.com/css/gz/windows10.gz"  IFACE="Ethernet Instance 0 2";;
 	6) PILIHOS="https://hadongpho.com/css/gz/windows11.gz"  IFACE="Ethernet Instance 0 2";;
 	7) read -p "Masukkan Link GZ mu : " PILIHOS;;
 	*) echo "pilihan salah"; exit;;
 esac
 clear
-echo -e "Merasa terbantu dengan script ini? "
-echo -e "Anda bisa memberikan dukungan melalui QRIS kami https://sshaxor.my.id/qris"
+echo -e " Merasa terbantu dengan script ini? "
+echo -e " Anda bisa memberikan dukungan melalui QRIS kami https://sshaxor.my.id/qris"
 
-read -p "Masukkan password untuk akun Administrator " PASSADMIN
+read -p "Masukkan password [>] :" PASSADMIN
 
 IP4=$(curl -4 -s icanhazip.com)
 GW=$(ip route | awk '/default/ { print $3 }')
 
 
 cat >/tmp/net.bat<<EOF
-@ECHO OFF
+@echo off
+title SSHAXOR AUTO CREATE RDP DigitalOcean
+color F2
+echo.
+echo   ____ ____  _   _    _    __  _____  ____  
+echo  / ___/ ___^|^| ^| ^| ^|  / \   \ \/ / _ \^|  _ \ 
+echo  \___ \___ \^| ^|_^| ^| / _ \   \  / ^| ^| ^| ^|_) ^|
+echo   ___) ^|__) ^|  _  ^|/ ___ \  /  \ ^|_^| ^|  _ ^< 
+echo  ^|____/____/^|_^| ^|_/_/   \_\/_/\_\___/^|_^| \_\                                             
+echo.
+echo ================================================ 
+echo            [ SCRIPT AUTO INSTALL RDP ]
+echo                OWNER DEDI HUMAEDI
+echo ================================================
+echo.
 cd.>%windir%\GetAdmin
 if exist %windir%\GetAdmin (del /f /q "%windir%\GetAdmin") else (
 echo CreateObject^("Shell.Application"^).ShellExecute "%~s0", "%*", "", "runas", 1 >> "%temp%\Admin.vbs"
@@ -85,5 +99,8 @@ sudo ntfsfix /dev/vda1
 sudo mount -o rw /dev/vda1 /tmp/windows
 cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
 cp -f /tmp/net.bat net.bat
+sudo umount /dev/vda1
 
 echo 'Your server will turning off in 3 second'
+sleep 3
+poweroff
