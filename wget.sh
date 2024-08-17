@@ -73,8 +73,8 @@ case "$PILIHOS" in
 	2) PILIHOS="http://167.172.78.82/GPISERVER2016.gz"  IFACE="Ethernet Instance 0";;
 	3) PILIHOS="https://hadongpho.com/css/gz/windows2012.gz"  IFACE="Ethernet Instance 0";;
 	4) PILIHOS="http://167.172.78.82/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
-	5) PILIHOS="https://hadongpho.com/css/gz/windows10.gz"  IFACE="Ethernet Instance 0 2";;
-	6) PILIHOS="https://hadongpho.com/css/gz/windows11.gz"  IFACE="Ethernet Instance 0 2";;
+	5) PILIHOS="https://hadongpho.com/css/gz/windows10.gz"  IFACE="Ethernet Instance 0 2" OS=10;;
+	6) PILIHOS="https://hadongpho.com/css/gz/windows11.gz"  IFACE="Ethernet Instance 0 2" OS=11;;
 	7) read -p "Masukkan Link GZ mu : " PILIHOS;;
 	*) echo "pilihan salah"; exit;;
 esac
@@ -102,18 +102,6 @@ echo                OWNER DEDI HUMAEDI
 echo ================================================
 echo.
 
-netsh -c interface ip set address name="$IFACE" static $IP4 255.255.240.0 $GW
-netsh -c interface ip add dnsservers name="$IFACE" address=1.1.1.1 index=1 validate=no
-netsh -c interface ip add dnsservers name="$IFACE" address=8.8.4.4 index=2 validate=no
-
-netsh -c interface ip set address name="$IFACE2" static $IP4 255.255.240.0 $GW
-netsh -c interface ip add dnsservers name="$IFACE2" address=1.1.1.1 index=1 validate=no
-netsh -c interface ip add dnsservers name="$IFACE2" address=8.8.4.4 index=2 validate=no
-
-netsh -c interface ip set address name="$IFACE3" static $IP4 255.255.240.0 $GW
-netsh -c interface ip add dnsservers name="$IFACE3" address=1.1.1.1 index=1 validate=no
-netsh -c interface ip add dnsservers name="$IFACE3" address=8.8.4.4 index=2 validate=no
-
 cd.>%windir%\GetAdmin
 if exist %windir%\GetAdmin (del /f /q "%windir%\GetAdmin") else (
 echo CreateObject^("Shell.Application"^).ShellExecute "%~s0", "%*", "", "runas", 1 >> "%temp%\Admin.vbs"
@@ -138,14 +126,40 @@ del /f /q net.bat
 exit
 EOF
 
-wget --no-check-certificate -O- $PILIHOS | gunzip | dd of=/dev/vda bs=3M status=progress
+wget -q --no-check-certificate -O- $PILIHOS | gunzip | dd of=/dev/vda bs=3M status=progress > /dev/null 2>&1 &
+PID=$!
+
+# Display a rotating spinner while wget is running
+spin='|/-\'
+i=0
+echo -n "Proses WGET "
+
+while kill -0 $PID 2> /dev/null; do
+    i=$(( (i+1) % 4 ))
+    printf "\b${spin:$i:1}"
+    sleep 0.1
+done
 
 sudo mkdir /tmp/windows
-sudo ntfsfix /dev/vda1
-sudo mount -o rw /dev/vda1 /tmp/windows
-#cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
-#cp -f /tmp/net.bat net.bat
+
+if [ "$OS" -eq 10 ]; then
+	sudo ntfsfix /dev/vda1
+	sudo mount /dev/vda1 /tmp/windows
+	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
+	cp -f /tmp/net.bat net.bat
+	clear
+
+elif [ "$OS" -eq 11 ]; then
+	sudo ntfsfix /dev/vda3
+	sudo mount /dev/vda3 /tmp/windows
+	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Startup/
+	cp -f /tmp/net.bat net.bat
+	clear
+else
+    echo "INI WIN SERVER"
+fi
 
 
-#echo 'Your server will turning off in 3 second'
-#sleep 5
+echo 'Your server will turning off in 3 second'
+sleep 5
+poweroff
