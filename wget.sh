@@ -143,9 +143,9 @@ wget --no-check-certificate -O- $PILIHOS | gunzip | dd of=/dev/vda bs=3M status=
 sudo mkdir /tmp/windows
 sudo ntfsfix /dev/vda1
 sudo mount -o rw /dev/vda1 /tmp/windows
-cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
-cp -f /tmp/net.bat net.bat
+#cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
+#cp -f /tmp/net.bat net.bat
 
 
-echo 'Your server will turning off in 3 second'
-sleep 5
+#echo 'Your server will turning off in 3 second'
+#sleep 5
