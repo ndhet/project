@@ -72,12 +72,12 @@ echo -e ""
 read -p "  Pilih [>] : " PILIHOS
 
 case "$PILIHOS" in
-	1|"") PILIHOS="http://128.199.70.121/windows2012.gz"  IFACE="Ethernet" OS=10;;
+	1|"") PILIHOS="https://hadongpho.com/files/gz/windows2012.gz"  IFACE="Ethernet" OS=10;;
 	2) PILIHOS="https://hadongpho.com/css/gz/GPISERVER2016.gz"  IFACE="Ethernet Instance 0";;
 	3) PILIHOS="https://hadongpho.com/css/gz/GPISERVER19.gz"  IFACE="Ethernet Instance 0";;
-	4) PILIHOS="https://hadongpho.com/css/gz/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
-	5) PILIHOS="http://128.199.70.121/windows10.gz"  IFACE="Ethernet Instance 0 2" OS=10;;
-	6) PILIHOS="http://128.199.70.121/windows11.gz"  IFACE="Ethernet Instance 0 2" OS=11;;
+	4) PILIHOS="https://hadongpho.com/files/gz/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
+	5) PILIHOS="https://hadongpho.com/files/gz/windows10.gz"  IFACE="Ethernet Instance 0 2" OS=10;;
+	6) PILIHOS="https://hadongpho.com/files/gz/windows11.gz"  IFACE="Ethernet Instance 0 2" OS=11;;
 	7) read -p "Masukkan Link GZ mu : " PILIHOS
 		IFACE="Ethernet Instance 0 2"
 		;;
