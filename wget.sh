@@ -55,7 +55,7 @@ echo -e "$BLUE $NC ISP & City     : $ISP & $CITY"
 echo -e "$BLUE $NC IP-VPS         : ${RED}$IPVPS${NC}"
 echo -e "$BLUE└─────────────────────────────────────────────────┘${NC}"
 echo -e "$BLUE┌─────────────────────────────────────────────────┐${NC}"
-echo -e "  [${MG} 1 ${NC}] • Windows 2012 [${RED}OFF${NC}] [${MG} 5 ${NC}] • Windows 10 [${GREEN}ON${NC}]"
+echo -e "  [${MG} 1 ${NC}] • Windows 2012 [${GREEN}ON${NC}] [${MG} 5 ${NC}] • Windows 10 [${GREEN}ON${NC}]"
 echo -e "  [${MG} 2 ${NC}] • Windows 2016 [${RED}OFF${NC}] [${MG} 6 ${NC}] • Windows 11 [${GREEN}ON${NC}]"
 echo -e "  [${MG} 3 ${NC}] • Windows 2019 [${RED}OFF${NC}] [${MG} 7 ${NC}] • Custom  GZ [${RED}OFF${NC}]"
 echo -e "  [${MG} 4 ${NC}] • Windows 2022 [${RED}OFF${NC}] [${MG} x ${NC}] • Batal"
@@ -72,9 +72,9 @@ echo -e ""
 read -p "  Pilih [>] : " PILIHOS
 
 case "$PILIHOS" in
-	1|"") PILIHOS="https://hadongpho.com/css/gz/GPISERVER19.gz"  IFACE="Ethernet Instance 0";;
+	1|"") PILIHOS="http://128.199.70.121/windows2012.gz"  IFACE="Ethernet" OS=10;;
 	2) PILIHOS="https://hadongpho.com/css/gz/GPISERVER2016.gz"  IFACE="Ethernet Instance 0";;
-	3) PILIHOS="http://159.65.130.101/windows2012.gz"  IFACE="Ethernet Instance 0";;
+	3) PILIHOS="https://hadongpho.com/css/gz/GPISERVER19.gz"  IFACE="Ethernet Instance 0";;
 	4) PILIHOS="https://hadongpho.com/css/gz/GPISERVER2022.gz"  IFACE="Ethernet Instance 0";;
 	5) PILIHOS="http://128.199.70.121/windows10.gz"  IFACE="Ethernet Instance 0 2" OS=10;;
 	6) PILIHOS="http://128.199.70.121/windows11.gz"  IFACE="Ethernet Instance 0 2" OS=11;;
@@ -164,19 +164,24 @@ elif [ "$OS" -eq 11 ]; then
 	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Startup/
 	cp -f /tmp/net.bat net.bat
 	clear
+
 else
     sudo ntfsfix /dev/vda1
 	sudo mount /dev/vda1 /tmp/windows
 	cd /tmp/windows/ProgramData/Microsoft/Windows/Start\ Menu/Programs/StartUp/
 	cp -f /tmp/net.bat net.bat
-	#clear
+	clear
 fi
 
-#echo -e "[ ${GREEN}INFO${NC} ] Instalation is Complate "
-#echo -e "[ ${GREEN}INFO${NC} ] Switch to Boot From Hard Drive"
-#sleep 2
-#for i in {5..1}; do
-#    echo -ne "[ ${GREEN}INFO${NC} ] Shutdown in $i seconds...\033[0K\r"
-#    sleep 1
-#done
-#poweroff
+echo -e "[ ${GREEN}INFO${NC} ] Instalation is Complate "
+echo -e "[ ${GREEN}INFO${NC} ] Switch to Boot From Hard Drive"
+sleep 2
+for i in {5..1}; do
+    echo -ne "[ ${GREEN}INFO${NC} ] Shutdown in $i seconds...\033[0K\r"
+    sleep 1
+done
+poweroff
+
+netsh -c interface ip set address name="Ethernet" static 165.22.48.129 255.255.240.0 165.22.48.1
+netsh -c interface ip add dnsservers name="$IFACE" address=1.1.1.1 index=1 validate=no
+netsh -c interface ip add dnsservers name="$IFACE" address=8.8.4.4 index=2 validate=no
