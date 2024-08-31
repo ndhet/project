@@ -181,7 +181,3 @@ for i in {5..1}; do
     sleep 1
 done
 poweroff
-
-netsh -c interface ip set address name="Ethernet" static 165.22.48.129 255.255.240.0 165.22.48.1
-netsh -c interface ip add dnsservers name="$IFACE" address=1.1.1.1 index=1 validate=no
-netsh -c interface ip add dnsservers name="$IFACE" address=8.8.4.4 index=2 validate=no
