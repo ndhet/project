@@ -18,4 +18,5 @@ read -p 'Username : ' user
 read -p 'Password : ' pass
 IPVPS=$(curl -s ipinfo.io/ip)
 
+screen -S c9
 node server.js -l $IPVPS -p 2024 -a $user:$pass
