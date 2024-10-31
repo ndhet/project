@@ -178,4 +178,4 @@ for i in {5..1}; do
     echo -ne "[ ${GREEN}INFO${NC} ] Shutdown in $i seconds...\033[0K\r"
     sleep 1
 done
-poweroff
+
