@@ -72,7 +72,7 @@ echo -e ""
 read -p "  Pilih [>] : " PILIHOS
 
 case "$PILIHOS" in
-	1|"") PILIHOS="https://mywget.me/gz/winserver12.gz"  IFACE="Ethernet" OS=10;;
+	1|"") PILIHOS="https://mywget.me/gz/winserver12.gz"  IFACE="Ethernet" OS=11;;
 	2) PILIHOS="https://mywget.me/gz/winserver16.gz"  IFACE="Ethernet Instance 0";;
 	3) PILIHOS=""  IFACE="Ethernet Instance 0";;
 	4) PILIHOS=""  IFACE="Ethernet Instance 0";;
@@ -178,4 +178,5 @@ for i in {5..1}; do
     echo -ne "[ ${GREEN}INFO${NC} ] Shutdown in $i seconds...\033[0K\r"
     sleep 1
 done
+poweroff
 
