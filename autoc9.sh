@@ -1,13 +1,13 @@
 #!/bin/bash
 
-clear
-apt update -y
-apt upgrade -y
-apt install python2 -y
-apt install build-essential -y
-curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-bash nodesource_setup.sh
-apt install nodejs -y
+# Tambahkan repository dan update sistem
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt-add-repository universe -y
+sudo apt update -y
+sudo apt upgrade -y
+
+# Install dependencies
+sudo apt -y install curl git build-essential unzip nodejs make gcc python2-minimal libapache2-mod-php7.2 php7.2 php7.2-common
 
 #CLONE FROM GITHUB
 git clone https://github.com/c9/core.git c9sdk
@@ -19,4 +19,4 @@ read -p 'Password : ' pass
 IPVPS=$(curl -s ipinfo.io/ip)
 
 screen -S c9
-node server.js -l $IPVPS -p 2024 -a $user:$pass
+node server.js -l $IPVPS -p 2024 -a $user:$pass -w /root
